@@ -61,7 +61,7 @@ h1,h2,h3,.product h3,.cart-line h3,dialog h2,.social-highlights h3{font-family:v
 
 /* Match the wordmark to the warm heading color, with a purple interaction. */
 .logo{position:relative;color:var(--paper);transition:color .2s ease}
-.logo:hover,.logo:focus-visible{color:var(--purple)}
+@media(hover:hover) and (pointer:fine){.logo:hover{color:var(--purple)}}.logo:focus-visible{color:var(--purple)}
 @supports ((mask-image:url("")) or (-webkit-mask-image:url(""))){
 .logo img{opacity:0}
 .logo::after{content:"";position:absolute;inset:0;background-color:currentColor;pointer-events:none;-webkit-mask:url('gomorrah-logo-white.png') center/contain no-repeat;mask:url('gomorrah-logo-white.png') center/contain no-repeat}
@@ -78,14 +78,14 @@ h1,h2,h3,.product h3,.cart-line h3,dialog h2,.social-highlights h3{font-family:v
 .links{padding-inline:var(--page-gutter)}
 }
 
-/* Subtle pointer-only video zoom, preserving the established framing. */
+/* Animate the video container on a stable composited layer. */
 @media(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){
-.hero-video{transition:transform .7s cubic-bezier(.22,.61,.36,1);transform-origin:center center}
-.hero:hover .hero-video{transform:scale(1.035)}
+.hero .hero-art{transform:translate3d(0,0,0) scale(1);transform-origin:70% 50%;backface-visibility:hidden;will-change:transform;transition:transform 1.2s cubic-bezier(.25,.1,.25,1)}
+.hero:hover .hero-art{transform:translate3d(0,0,0) scale(1.018)}
 }
-@media(min-width:1051px) and (hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){
-.hero-video{transform-origin:70% 0%}
-.hero:hover .hero-video{transform:translateX(-9vw) scale(1.08)}
+@media(hover:none), (pointer:coarse){
+.logo,.logo:hover,.logo:focus{color:var(--paper)}
+.logo:active{color:var(--purple)}
 }
 </style><meta property="og:type" content="website"><meta property="og:site_name" content="Gomorrah Clothing"><meta property="og:title" content="GOMORRAH — Viste tu lado oscuro"><meta property="og:description" content="Poleras, polerones y gorros con identidad propia. Explora el catálogo de Gomorrah Clothing y haz tu pedido por WhatsApp."><meta property="og:url" content="https://gomorrahclothing.github.io/gomorrah-clothing/"><meta property="og:image" content="https://gomorrahclothing.github.io/gomorrah-clothing/gomorrah-social-preview.png"><meta property="og:image:secure_url" content="https://gomorrahclothing.github.io/gomorrah-clothing/gomorrah-social-preview.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="206"><meta property="og:image:height" content="206"><meta property="og:image:alt" content="Emblema gótico morado de Gomorrah Clothing sobre fondo negro"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="GOMORRAH — Viste tu lado oscuro"><meta name="twitter:description" content="Explora el catálogo de Gomorrah Clothing y haz tu pedido por WhatsApp."><meta name="twitter:image" content="https://gomorrahclothing.github.io/gomorrah-clothing/gomorrah-social-preview.png"><link rel="icon" type="image/png" sizes="64x64" href="favicon-gomorrah-purple.png?v=1"></head><body>
 <div class="bar">CATÁLOGO INDEPENDIENTE · COPIAPÓ, CHILE · PEDIDOS POR WHATSAPP E INSTAGRAM</div>
